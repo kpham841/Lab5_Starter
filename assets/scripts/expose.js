@@ -102,8 +102,8 @@ function init () {
   playButton.addEventListener('click', event => {
     audio.play()
 
-    // check if party horn
-    if (hornOptions.value == 'party-horn') {
+    // check if party horn and not on mute to play confetti
+    if (hornOptions.value == 'party-horn' && audio.volume !== 0) {
       jsConfetti.addConfetti()
     }
   })
